@@ -4,11 +4,10 @@ import com.ll.exam.article.dto.ArticleDto;
 
 import java.util.List;
 
-public class ArticleServie {
-
+public class ArticleService {
     private ArticleRepository articleRepository;
 
-    ArticleServie(){
+    public ArticleService() {
         articleRepository = new ArticleRepository();
     }
 
@@ -18,5 +17,9 @@ public class ArticleServie {
 
     public List<ArticleDto> findAll() {
         return articleRepository.findAll();
+    }
+
+    public ArticleDto findById(long id) {
+        return articleRepository.findById(id);
     }
 }
