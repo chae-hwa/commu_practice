@@ -1,8 +1,19 @@
 package com.ll.exam.article.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
 public class ArticleDto {
+    @Getter
+    @Setter
     private long id;
+    @Getter
+    @Setter
     private String title;
+    @Getter
+    @Setter
     private String body;
 
     @Override
@@ -20,27 +31,4 @@ public class ArticleDto {
         this.body = body;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
 }
