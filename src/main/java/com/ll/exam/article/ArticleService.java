@@ -26,4 +26,9 @@ public class ArticleService {
     public void delete(long id) {
         articleRepository.delete(id);
     }
+
+
+    public void modify(long id, String title, String body) {
+        articleRepository.modity(id,title,body);
+    }
 }

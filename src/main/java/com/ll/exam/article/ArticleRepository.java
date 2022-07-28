@@ -54,4 +54,14 @@ public class ArticleRepository {
 
         datum.remove(articleDto);
     }
+
+
+    public void modity(long id, String title, String body) {
+        ArticleDto articleDto = findById(id);
+
+        if(articleDto == null) return;
+
+        articleDto.setTitle(title);
+        articleDto.setBody(body);
+    }
 }
