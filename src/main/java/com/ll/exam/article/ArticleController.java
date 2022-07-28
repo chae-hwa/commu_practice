@@ -16,8 +16,8 @@ public class ArticleController {
     public void showList(Rq rq) {
         List<ArticleDto> articleDtos = articleService.findAll();
 
-        rq.setAttr("articles", articleDtos);
-        rq.view("usr/article/list");
+        rq.setAttr("articles", articleDtos); // 서블릿이 jsp에게 넘겨줄 때 사용할 값을 보고(?)
+        rq.view("usr/article/list");          // list.jsp에서 사용할 수 있게 된다.
     }
 
     public void showWrite(Rq rq) {

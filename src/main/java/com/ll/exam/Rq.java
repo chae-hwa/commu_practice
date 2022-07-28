@@ -87,6 +87,7 @@ public class Rq {
         return req.getMethod();
     }
 
+    // url의 마지막 번호를 구분하기.
     public long getLongPathValueByIndex(int index, long defaultValue) {
         String value = getPathValueByIndex(index, null);
 
@@ -95,18 +96,18 @@ public class Rq {
         }
 
         try {
-            return Long.parseLong(value);
-        }
+            return Long.parseLong(value);  // long으로 형변환하여 반환해라라
+       }
         catch ( NumberFormatException e ) {
             return defaultValue;
         }
     }
-
-    public String getPathValueByIndex(int index, String defaultValue) {
+    // url 쪼개서 마지막 숫자를 찾아내라
+    public String getPathValueByIndex(int index, String defaultValue) { //우리 프로그램에서 index는 1로만 적용
         String[] bits = req.getRequestURI().split("/");
 
         try {
-            return bits[4 + index];
+            return bits[4 + index]; // 4번째 + 1 -> 5번째 값을 반환해라.
         } catch (ArrayIndexOutOfBoundsException e) {
             return defaultValue;
         }
